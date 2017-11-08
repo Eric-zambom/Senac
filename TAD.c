@@ -11,7 +11,7 @@ int main(){
   inserir(&minhaFila, 59);
   inserir(&minhaFila, 19);
   inserir(&minhaFila, 28);
-  imprimeFila(&minhaFila); //Até aqui tá rolando essa bagaça
+  imprimeFila(&minhaFila); 
   temp=remover(&minhaFila);
   temp=remover(&minhaFila);
   imprimeFila(&minhaFila);
