@@ -1,36 +1,28 @@
 #include <stdio.h>
 
+int count;
+
 typedef struct N{
   int x;
   int y;
-  struct N *proximo;
-  struct N *anterior;
+  struct N *next, *prior;
 } coord;
 
-typedef struct{
-  node *fim;
-  node *inicio;
-}Control;
-
-void inicializaControl(Control *p){
-  p->inicio=NULL;
-  p->fim=NULL;
+void inserir(struct coord *p, struct coord **last)
+{
+  if(!*last) *last = p; //eh o primeiro item da lista
+  else  (*last) -> next = p;
+  p -> next == NULL;
+  p -> prior = *last;
+  *last = p;
 }
 
-int vazia(Control *p){
-  if(p->fim==NULL){
-    return 1;
-  }
-  return 0;
+/* Cria uma lista duplamente encadeada ordenada. */
+void dls_store {
+  struct coord *i.
+  struct coord **start
 }
 
-void inserir(Control *p, int x, int y){
-  node *no;
-  no = (node *)malloc(sizeof(node));
-  no->valor=valor;
-  no->proximo=p->fim;
-  p->fim=no;
-}
 
 int remover(Fila *p){
   if(vazia(p)==1){
