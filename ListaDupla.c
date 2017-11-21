@@ -1,31 +1,39 @@
 #include <stdio.h>
 
-int count;
-
 typedef struct N{
-  int x;
-  int y;
-  struct N *next, *prior;
-} coord;
+  int valor;
+  struct N *next;
+  struct N *prior;
+} lista;
 
-void inserir(struct coord *p, struct coord **last)
-{
-  if(!*last) *last = p; //eh o primeiro item da lista
-  else  (*last) -> next = p;
-  p -> next == NULL;
-  p -> prior = *last;
-  *last = p;
+void inicializaFila(Fila *p){
+  p->topo=NULL;
 }
 
-/* Cria uma lista duplamente encadeada ordenada. */
-void dls_store {
-  struct coord *i.
-  struct coord **start
+int vazia(Fila *p){
+  if(p->topo==NULL){
+    return 1;
+  }
+  return 0;
 }
 
+int cheia(Fila *p){
+  if(p->topo>=10){
+    return 1;
+  }
+  return 0;
+}
 
-int remover(Fila *p){
- (struct N *i,
+void inserir(struct N *i, struct lista **last){
+  if(!*last) *last = i; 
+  else (*last) ->next = i;
+  i->next = NULL;
+  i->prior = *last;
+  *last = i;
+}
+
+int remover
+(struct N *i,
 struct N **start,
 struct N **last) 
 {
@@ -52,7 +60,7 @@ struct N **last)
 
 void imprimeFila(Fila *p){
   node *temp;
-  temp=p->fim;
+  temp=p->topo;
   while(temp!=NULL){
     printf("%d ", temp->valor);
     temp=temp->proximo;
